@@ -11,7 +11,7 @@ const AddTask = ({handleTaskAddition}) => {
     }
 
     const handleAddTaskClick = () => {
-        handleTaskAddition(inputData)
+        inputData != ''? handleTaskAddition(inputData): console.log("Digite algo")
         setInputData("")
 
     }
