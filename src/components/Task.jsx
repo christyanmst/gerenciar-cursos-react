@@ -1,8 +1,6 @@
 import React from 'react';
 
-import './Task.css'
-
-const Task = ({task, handleTaskClick}) => {
+const Task = ({task, handleTaskClick, handleTaskRemove}) => {
     return ( 
         <div 
             className="task-container"
@@ -12,7 +10,7 @@ const Task = ({task, handleTaskClick}) => {
                 {task.title}
             </div>
             <div className='buttons-container'>
-                <button className='remove-task-button'></button>
+                <button className='button' onClick={() => handleTaskRemove(task.id)}> X </button>
             </div>
         </div>
      );

@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import './AddTask.css'
 import Button from './Button';
 
 const AddTask = ({handleTaskAddition}) => {
@@ -11,9 +10,8 @@ const AddTask = ({handleTaskAddition}) => {
     }
 
     const handleAddTaskClick = () => {
-        inputData != ''? handleTaskAddition(inputData): console.log("Digite algo")
+        inputData != ''? handleTaskAddition(inputData): alert("Digite algo antes de inserir!");
         setInputData("")
-
     }
 
     return (

@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import {v4 as uuidv4} from 'uuid'
 
-import './App.css'
 import Tasks from './components/Tasks'
 import AddTask from './components/AddTask';
 
@@ -41,11 +40,16 @@ const App = () =>{
     setTasks(newTasks)
   }
 
+  const handleTaskRemove = (taskId) => {
+    tasks.splice(tasks.indexOf(tasks.find((i) => i.id === taskId)),1);
+    setTasks([...tasks]);
+  }
+
   return(
     <>
       <div className="container">
         <AddTask handleTaskAddition={handleTaskAddition}/>
-        <Tasks tasks={tasks} handleTaskClick={handleTaskClick}/>
+        <Tasks tasks={tasks} handleTaskClick={handleTaskClick} handleTaskRemove={handleTaskRemove}/>
       </div>
     </>
   )
